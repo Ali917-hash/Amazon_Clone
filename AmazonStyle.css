@@ -179,6 +179,7 @@ hero-msg a {
     background-color: white;
     padding: 20px 0px 15px;
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 .box-img1{
@@ -210,24 +211,6 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 0.85rem;
-}
-
-.foot-panel2 {
-    background-color: #222f3d;
-    color: white;
-    height: 300px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-ul {
-    margin-top: 20px;
-}
-ul a {
-    display: block;
-    font-size: 0.85rem;
-    margin-top: 10px;
-    color: #dddddd;
 }
 
 .foot-panel3{
@@ -310,4 +293,123 @@ select {
   margin: 5px 0;
   font-size: 14px;
   cursor: pointer;
+}
+
+/* =========================================
+   LAPTOPS & SMALLER DESKTOPS (Max 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+    .nav-search {
+        width: 45%; /* Allows the search bar to shrink slightly */
+    }
+    
+    .box {
+        width: 46%; /* Drops from 4 columns to 2 columns */
+    }
+    
+    .panel-ops {
+        width: auto;
+        gap: 15px;
+    }
+}
+
+/* =========================================
+   TABLETS (Max 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Hide non-essential navbar items to save space */
+    .nav-address, .nav-return, .panel-deals {
+        display: none;
+    }
+
+    .nav-search {
+        width: 60%;
+    }
+
+    /* Adjust footer to two columns */
+    .footer-row {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        width: 40%;
+    }
+}
+
+/* =========================================
+   MOBILE PHONES (Max 576px)
+   ========================================= */
+@media (max-width: 576px) {
+    /* Navbar adjustments */
+    .navbar {
+        flex-wrap: wrap; /* Allows items to wrap to a new line */
+        height: auto;
+        padding: 10px 0;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        margin-left: 10px;
+    }
+
+    .nav-sign-in, .nav-cart {
+        margin-right: 10px;
+    }
+
+    /* Push search bar to its own row at the bottom of the nav */
+    .nav-search {
+        width: 92%;
+        order: 5; 
+        margin: 10px auto 5px;
+    }
+
+    /* Make the sub-panel scrollable horizontally */
+    .panel {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-left: 10px;
+    }
+
+    .panel-ops {
+        display: flex;
+    }
+
+    .hero-section {
+        height: 200px; /* Shrink hero image height */
+    }
+
+    /* Shop section drops to 1 column */
+    .box {
+        width: 90%; 
+        margin: 15px auto;
+    }
+
+    /* Stack footer links into a single column */
+    .footer-col {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .foot-panel3 {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .foot-panel3 .logo {
+        margin-right: 0;
+    }
+    
+    .language, .currency, .country {
+        margin-right: 0;
+        width: 80%;
+        text-align: center;
+    }
+    
+    select {
+        width: 100%;
+    }
 }
